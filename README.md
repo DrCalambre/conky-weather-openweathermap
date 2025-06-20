@@ -8,7 +8,7 @@ Although my blog is in Spanish, there is a language translator for a better unde
 
 Best regards 
 
-☕ ¡Invítame con un café!
+☕ Buy me a coffee :)
 
 [![Invitame un café en cafecito.app](https://cdn.cafecito.app/imgs/buttons/button_1.svg)](https://cafecito.app/drcalambre)
 
