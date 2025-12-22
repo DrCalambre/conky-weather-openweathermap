@@ -1,23 +1,7 @@
 #!/bin/bash
-# -------------------------------------------------------------------
-# File: GetStation.sh
-# Type: Bash Shell Script                             
-# By Julio Alberto Lascano http://drcalambre.blogspot.com/
-#________          _________        .__                ___.                  
-#\______ \_______  \_   ___ \_____  |  | _____    _____\_ |_________   ____  
-# |    |  \_  __ \ /    \  \/\__  \ |  | \__  \  /     \| __ \_  __ \_/ __ \ 
-# |    `   \  | \/ \     \____/ __ \|  |__/ __ \|  Y Y  \ \_\ \  | \/\  ___/ 
-#/_______  /__|     \______  (____  /____(____  /__|_|  /___  /__|    \___  >
-#        \/                \/     \/          \/      \/    \/            \/ 
-#
-# Last modified:2024-06-04                    
-# ------------------------
-# Este script calcula la estación actual y los días restantes para la siguiente 
-# estación en función de la ubicación actual.
-# -------------------------------------------------------------------
-# / OS : $GNULinux, $FreeBSD (X Window)
-# -------------------------------------------------------------------
 
+# GetStation.sh
+# Versión corregida: arregla días negativos al cruzar el año (verano → otoño en sur, invierno → primavera en norte)
 
 # Obtener la latitud usando ipinfo.io
 latitude=$(curl -s https://ipinfo.io/ | jq -r '.loc' | cut -d ',' -f 1)
@@ -31,28 +15,37 @@ fi
 
 # Obtener la fecha actual
 current_date=$(date +%Y-%m-%d)
+current_year=$(date +%Y)
 
-# Establecer las fechas de inicio de las estaciones según el hemisferio
+# Establecer las fechas de inicio de las estaciones según el hemisferio (año actual)
 if [[ "$hemisphere" == "norte" ]]; then
-    spring_start=$(date -d "$(date +%Y)-03-21" +%Y-%m-%d)
-    summer_start=$(date -d "$(date +%Y)-06-21" +%Y-%m-%d)
-    autumn_start=$(date -d "$(date +%Y)-09-21" +%Y-%m-%d)
-    winter_start=$(date -d "$(date +%Y)-12-21" +%Y-%m-%d)
-    next_year_spring_start=$(date -d "$(( $(date +%Y) + 1 ))-03-21" +%Y-%m-%d)
+    spring_start=$(date -d "${current_year}-03-21" +%Y-%m-%d)
+    summer_start=$(date -d "${current_year}-06-21" +%Y-%m-%d)
+    autumn_start=$(date -d "${current_year}-09-21" +%Y-%m-%d)
+    winter_start=$(date -d "${current_year}-12-21" +%Y-%m-%d)
 else
-    spring_start=$(date -d "$(date +%Y)-09-21" +%Y-%m-%d)
-    summer_start=$(date -d "$(date +%Y)-12-21" +%Y-%m-%d)
-    autumn_start=$(date -d "$(date +%Y)-03-21" +%Y-%m-%d)
-    winter_start=$(date -d "$(date +%Y)-06-20" +%Y-%m-%d)
-    next_year_autumn_start=$(date -d "$(( $(date +%Y) + 1 ))-03-21" +%Y-%m-%d)
+    spring_start=$(date -d "${current_year}-09-21" +%Y-%m-%d)
+    summer_start=$(date -d "${current_year}-12-21" +%Y-%m-%d)
+    autumn_start=$(date -d "${current_year}-03-21" +%Y-%m-%d)
+    winter_start=$(date -d "${current_year}-06-20" +%Y-%m-%d)
 fi
+
+# Fechas del año siguiente (solo las que pueden cruzarse)
+next_year=$((current_year + 1))
+next_year_autumn=$(date -d "${next_year}-03-21" +%Y-%m-%d)
+next_year_spring_norte=$(date -d "${next_year}-03-21" +%Y-%m-%d)
 
 # Calcular la estación actual y la próxima estación
 if [[ "$hemisphere" == "norte" ]]; then
     if [[ "$current_date" > "$winter_start" ]] || [[ "$current_date" < "$spring_start" ]]; then
         current_season="Invierno"
         next_season="Primavera"
-        next_season_date=$spring_start
+        # Corrección clave: si ya pasó el 21-dic, primavera es del año siguiente
+        if [[ "$current_date" > "$winter_start" ]]; then
+            next_season_date=$next_year_spring_norte
+        else
+            next_season_date=$spring_start
+        fi
         current_icon="winter"
         next_icon="spring"
     elif [[ "$current_date" < "$summer_start" ]]; then
@@ -75,10 +68,16 @@ if [[ "$hemisphere" == "norte" ]]; then
         next_icon="winter"
     fi
 else
+    # Hemisferio sur
     if [[ "$current_date" > "$summer_start" ]] || [[ "$current_date" < "$autumn_start" ]]; then
         current_season="Verano"
         next_season="Otoño"
-        next_season_date=$autumn_start
+        # Corrección clave: si ya comenzó el verano (después del 21-dic), otoño es del año siguiente
+        if [[ "$current_date" > "$summer_start" ]]; then
+            next_season_date=$next_year_autumn
+        else
+            next_season_date=$autumn_start
+        fi
         current_icon="summer"
         next_icon="autumn"
     elif [[ "$current_date" < "$winter_start" ]]; then
@@ -114,9 +113,9 @@ else
     days_text="$days_until_next_season días para"
 fi
 
-# Copiar la estación actual y la próxima en el directorio temporal del usuario.
-cp -r ~/.config/conky/icons/${current_icon}.png ~/.cache/current_station.png
-cp -r ~/.config/conky/icons/${next_icon}.png ~/.cache/next_station.png
+# Copiar iconos (quitamos -r porque no es necesario y a veces falla)
+cp ~/.config/conky/icons/${current_icon}.png ~/.cache/current_station.png 2>/dev/null
+cp ~/.config/conky/icons/${next_icon}.png ~/.cache/next_station.png 2>/dev/null
 
-# Mostrar la estación actual, el icono y los días restantes para la próxima estación
+# Mostrar salida
 echo "$current_season;$current_icon;$next_season;$next_icon;$days_text"
