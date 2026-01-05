@@ -142,6 +142,7 @@ Ensure your `conky.conf` includes:
 ```lua
 own_window = true,
 own_window_type = 'dock',
+own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
 own_window_transparent = true,
 own_window_argb_visual = true,
 own_window_argb_value = 80,
