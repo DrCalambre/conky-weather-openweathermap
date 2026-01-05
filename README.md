@@ -44,6 +44,62 @@ Picom provides real compositing and proper ARGB support.
 ---
 
 ### ✅ Required Packages
+Make sure the following packages are installed:
+```bash
+sudo apt install conky picom jq curl fonts-materialdesignicons-webfont
+```
+
+Optional (only if you use disk temperature monitoring):
+
+```bash
+sudo apt install smartmontools
+```
+
+---
+
+## 2️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/OpenWeatherMap-wather-conky-master.git
+cd OpenWeatherMap-wather-conky-master
+```
+
+Copy the files to your Conky directory:
+
+```bash
+mkdir -p ~/.config/conky
+cp -r * ~/.config/conky/
+```
+
+---
+
+## 3️⃣ Make Scripts Executable
+
+Ensure all scripts are executable:
+
+```bash
+chmod +x ~/.config/conky/scripts/*.sh
+chmod +x ~/.config/conky/scripts/*.pl
+```
+
+---
+
+## 4️⃣ Configure OpenWeatherMap API
+
+Edit the weather script and insert your OpenWeatherMap API key:
+
+```bash
+nano ~/.config/conky/scripts/openweathermap.sh
+```
+
+Replace:
+
+```bash
+API_KEY="your_api_key_here"
+```
+
+---
+## 5️⃣ Enable Real Transparency (IceWM / AntiX)
 
 Install picom if it is not already installed:
 
