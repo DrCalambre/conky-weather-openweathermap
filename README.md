@@ -141,10 +141,10 @@ Ensure your `conky.conf` includes:
 
 ```lua
 own_window = true,
-own_window_type = 'override',
+own_window_type = 'dock',
 own_window_transparent = true,
 own_window_argb_visual = true,
-own_window_argb_value = 0,
+own_window_argb_value = 80,
 double_buffer = true,
 override_utf8_locale = true,
 ```
