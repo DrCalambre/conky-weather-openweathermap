@@ -13,6 +13,132 @@ Best regards
 [![Invitame un café en cafecito.app](https://cdn.cafecito.app/imgs/buttons/button_1.svg)](https://cafecito.app/drcalambre)
 
 * * *
+# **Update in 05/01/26**
+**
+## 🔄 **New Requirement: Real Transparency with Picom (IceWM / AntiX)**
+
+> **Important**: To achieve *real transparency* in Conky when using IceWM (AntiX), a compositor **must be running before Conky starts**.
+> This project is tested and confirmed working with **picom**.
+
+### Why this is required
+
+IceWM does **not provide native compositing**.
+Without a compositor:
+
+* `own_window_transparent = true` only produces *pseudo-transparency*
+* ARGB transparency will **not work correctly**
+* Fonts, icons and background blending may look broken or opaque
+
+Picom provides real compositing and ARGB support.
+
+---
+
+## ✅ Required Packages
+
+Install picom if it is not already installed:
+
+```bash
+sudo apt install picom
+```
+
+---
+
+## ▶️ Startup Order (Very Important)
+
+**Picom must start BEFORE Conky.**
+
+In AntiX / IceWM, edit your startup file:
+
+```bash
+~/.desktop-session/startup
+```
+
+### Correct example configuration
+
+```bash
+## --- Compositor (must start first) ---
+picom --backend xrender --vsync &
+
+## --- Conky ---
+conky &
+```
+
+📌 **Key point**:
+If Conky starts **before** picom, transparency will not be applied correctly.
+
+---
+
+## ⚙️ Recommended Conky Settings
+
+Make sure your `conky.conf` includes the following options:
+
+```lua
+own_window = true,
+own_window_type = 'override',
+own_window_transparent = true,
+own_window_argb_visual = true,
+own_window_argb_value = 0,
+double_buffer = true,
+override_utf8_locale = true,
+```
+
+These options ensure:
+
+* Real ARGB transparency
+* No window borders or decorations
+* Correct font and icon rendering
+
+---
+
+## 🧪 Troubleshooting
+
+### Conky appears with solid background
+
+✔ Verify picom is running:
+
+```bash
+pgrep picom
+```
+
+✔ Restart Conky **after** picom:
+
+```bash
+killall conky
+conky &
+```
+
+---
+
+### Transparency works only after restarting Conky
+
+This indicates that picom is starting **after** Conky.
+Fix the startup order as shown above.
+
+---
+
+### Performance notes (low-end systems)
+
+For older GPUs or lightweight systems, the following picom options are recommended:
+
+```bash
+picom --backend xrender --vsync &
+```
+
+This avoids OpenGL overhead and works well with IceWM on AntiX.
+
+---
+
+## 🖥️ Tested Environment
+
+* **Window Manager**: IceWM
+* **Distribution**: AntiX Linux
+* **Compositor**: picom (xrender backend)
+* **Conky**: v1.10+
+
+---
+
+
+* * *
 # **Update in 05/03/25**
 **This update introduces a new Conky configuration that displays the remaining daylight hours until sunrise/sunset, calculated using a new script `horas_luz.sh`.**
 
