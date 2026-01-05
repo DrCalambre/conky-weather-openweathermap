@@ -126,7 +126,9 @@ Edit the AntiX startup file:
 picom --backend xrender --vsync &
 
 ## --- Conky ---
-conky &
+sleep 1
+bash /usr/local/bin/conkytoggle.sh &
+
 ```
 
 📌 If Conky starts **before** picom, transparency will not be applied correctly.
