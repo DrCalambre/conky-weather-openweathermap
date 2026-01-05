@@ -16,7 +16,7 @@ https://drcalambre.blogspot.com/2023/09/conky-implementando-perl-para-las-fases.
 
 ---
 
-☕ **Buy me a coffee**
+☕ Buy me a coffee :)
 
 [![Invitame un café en cafecito.app](https://cdn.cafecito.app/imgs/buttons/button_1.svg)](https://cafecito.app/drcalambre)
 
