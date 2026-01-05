@@ -1,4 +1,3 @@
-````markdown
 # OpenWeatherMap-wather-conky-master
 
 A Conky configuration using the **OpenWeatherMap API**, featuring:
