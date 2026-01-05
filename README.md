@@ -60,7 +60,7 @@ sudo apt install smartmontools
 ## 2️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/OpenWeatherMap-wather-conky-master.git
+git clone https://github.com/DrCalambre/OpenWeatherMap-wather-conky-master.git
 cd OpenWeatherMap-wather-conky-master
 ```
 
