@@ -195,6 +195,32 @@ This Conky configuration now includes **UV radiation monitoring** using the **Op
 > They are derived from numerical weather models and **not from ground-based UV sensors**.  
 > Values are suitable for **informational and risk-awareness purposes**, not for scientific or medical use.
 
+### 🧠 About UV data reliability (model-based vs physical sensors)
+
+The UV index shown here is **not measured by a local physical sensor**.
+It is calculated using **numerical weather models** provided by the Open-Meteo API.
+
+This approach has some important practical advantages:
+
+* Affordable UV sensors often suffer from:
+  * Poor cosine correction
+  * Temperature drift
+  * Aging and calibration issues
+  * Strong sensitivity to sensor orientation and shading
+
+* Model-based UV data:
+  * Integrates satellite observations, atmospheric composition and cloud cover
+  * Represents **area-averaged conditions**, not a single point measurement
+  * Is generally **more stable and consistent** than low-cost sensors
+  * Is widely used in weather services and public UV forecasts
+
+For **daily exposure awareness, risk estimation and planning outdoor activities**,
+model-based UV values are often **more reliable than consumer-grade sensors**.
+
+That said, this data is **informational only** and not intended for medical,
+scientific or dosimetric use.
+
+
 ![UV radiation monitoring – Conky](screenshot/conky-UV-radiation-monitoring.gif)
 
 
