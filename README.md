@@ -195,12 +195,14 @@ This Conky configuration now includes **UV radiation monitoring** using the **Op
 > They are derived from numerical weather models and **not from ground-based UV sensors**.  
 > Values are suitable for **informational and risk-awareness purposes**, not for scientific or medical use.
 
+![UV radiation monitoring – Conky](screenshot/conky-UV-radiation-monitoring.gif)
+
 
 ### Features
 
 * Current UV Index
 * Daily maximum UV Index
-* Time of maximum UV radiation (model-based)
+* Time of maximum UV radiation (model-based estimate)
 * Compact visual indicator for peak UV time (↑ HH:MM)
 * Automatic UV risk level classification
 
@@ -279,6 +281,8 @@ Introduces real-time UV radiation monitoring, including:
 * Automatic UV risk classification
 * Lightweight scripts suitable for low-resource systems
 
+![UV radiation monitoring – Conky](screenshot/conky-UV-radiation-monitoring.gif)
+
 ---
 ### **Update — 05/01/26**
 
@@ -344,6 +348,9 @@ Supports both hemispheres and displays seasonal icons dynamically.
 ---
 
 ## 📸 Screenshots
+**UV radiation monitoring (model-based, Open-Meteo)**
+
+![UV radiation monitoring – Conky](screenshot/conky-UV-radiation-monitoring.gif)
 
 ![conky from my antiX desktop](screenshot/screenshot_conk_current_and_next_station.jpg)
 ![conky from my antiX desktop](screenshot/screenshot_conky.jpg)
