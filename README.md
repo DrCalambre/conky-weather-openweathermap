@@ -186,10 +186,100 @@ Picom is starting too late. Fix the startup order.
 
 ---
 
+
+## ☀️ UV Index Monitoring (Open-Meteo)
+
+This Conky configuration now includes **UV radiation monitoring** using the **Open-Meteo API**.
+> **Note on data accuracy**  
+> UV values are **model-based estimates** provided by the Open-Meteo API.  
+> They are derived from numerical weather models and **not from ground-based UV sensors**.  
+> Values are suitable for **informational and risk-awareness purposes**, not for scientific or medical use.
+
+
+### Features
+
+* Current UV Index
+* Daily maximum UV Index
+* Time of maximum UV radiation (model-based)
+* Compact visual indicator for peak UV time (↑ HH:MM)
+* Automatic UV risk level classification
+
+Designed to be lightweight and suitable for low-resource systems.
+
+---
+
+### 📊 UV Risk Scale
+
+| UV Index | Risk Level     |
+|---------:|---------------|
+| 0 – 2    | Low           |
+| 3 – 5    | Moderate      |
+| 6 – 7    | High          |
+| 8 – 10   | Very High     |
+| 11+      | Extreme       |
+
+Risk labels are generated automatically by the scripts.
+
+---
+
+### 📜 Scripts Included
+
+Located in:
+
+```bash
+~/.config/conky/scripts/
+```
+
+* `openMeteo-uv.sh` → current UV index
+* `openMeteo-uv-hourly.sh` → hourly UV forecast
+* `uv_label.sh` → UV risk category
+* `uv_label_max_today.sh` → daily maximum UV and peak time
+
+---
+
+### ▶️ Usage Example (conky.conf)
+
+```bash
+${execi 600 ~/.config/conky/scripts/openMeteo-uv.sh}
+${execi 900 ~/.config/conky/scripts/uv_label.sh}
+${execi 1800 ~/.config/conky/scripts/uv_label_max_today.sh}
+```
+
+**Compact display example:**
+
+```
+UV máx hoy 6.8 · 15:00
+```
+
+Indicates the **time of maximum UV radiation** for the current day.
+
+---
+
+### 🌐 Data Source
+
+UV data provided by **Open-Meteo**
+[https://open-meteo.com/](https://open-meteo.com/)
+
+
+---
+
 ## 🆕 Updates & Technical History
 
 ---
 
+### **Update — 08/01/26**
+
+**UV Index monitoring (Open-Meteo integration)**
+
+Introduces real-time UV radiation monitoring, including:
+
+* Current UV Index display
+* Daily maximum UV value
+* Peak UV time indicator (↑ HH:MM)
+* Automatic UV risk classification
+* Lightweight scripts suitable for low-resource systems
+
+---
 ### **Update — 05/01/26**
 
 **Real transparency support using Picom (IceWM / AntiX)**
