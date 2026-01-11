@@ -282,6 +282,33 @@ UV máx hoy 6.8 · 15:00
 Indicates the **time of maximum UV radiation** for the current day.
 
 ---
+### 🌍 About the meteorological models behind Open-Meteo
+
+Open-Meteo does not rely on a single proprietary model.
+Instead, it aggregates and exposes **open numerical weather models**
+from some of the most reputable meteorological institutions worldwide.
+
+According to Open-Meteo, the UV and weather data are built using open data from:
+
+* **NOAA** (United States)
+* **DWD** – Deutscher Wetterdienst (Germany)
+* **Météo-France**
+* **ECMWF** – European Centre for Medium-Range Weather Forecasts
+* **JMA** – Japan Meteorological Agency
+
+These models combine:
+
+* Satellite observations
+* Atmospheric chemistry and ozone data
+* Cloud cover, aerosols and surface reflection
+* Continuous data assimilation and frequent updates
+
+Model outputs are typically generated at **high spatial resolution (≈1–2 km)**
+and updated **hourly**, making them well suited for regional-scale
+UV exposure awareness.
+
+This is the same class of data used by national weather services
+to publish public UV index forecasts.
 
 ### 🌐 Data Source
 
