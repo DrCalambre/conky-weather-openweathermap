@@ -24,27 +24,24 @@ DirShell="$HOME/.cache"
 DirScripts="$HOME/.config/conky/scripts"
 
 # ****************************
-wget -q -O ${DirShell}/raw "http://www.moongiant.com/phase/today" > /dev/null 2>&1
-
-cp ${DirShell}/raw ${DirShell}/ico
+wget -q -O ${DirShell}/raw "https://www.moongiant.com/phase/today" > /dev/null 2>&1
 
 [ -f ${DirShell}/moon_tmp.jpg ] && rm ${DirShell}/moon_tmp.jpg
 [ -f ${DirShell}/moon.jpg ] && rm ${DirShell}/moon.jpg
 
+# Obtener imagen actual desde moongiant (nuevo formato HTML)
+img_in=$(grep -oP '(?<=id="todayMoonContainer"><img src=")[^"]+' ${DirShell}/raw)
+
+# Descargar imagen desde moongiant solo si se encontró ruta
+if [ -n "$img_in" ]; then
+    wget -q -O ${DirShell}/moon_tmp.jpg "https://www.moongiant.com${img_in}" > /dev/null 2>&1
+fi
 
 sed -i -e '/^ *$/d' -e 's/^ *//g' ${DirShell}/raw
 sed -i '/Illumination/!d' ${DirShell}/raw
 sed -i 's/<br>/\n/g' ${DirShell}/raw
 sed -i 's|<[^>]*>||g' ${DirShell}/raw
 sed -i -e '4d' ${DirShell}/raw
-
-#ico name
-sed -i '/var jArray=\|"todayMoonContainer"/!d' ${DirShell}/ico
-sed -i -e 's/"\]};//g' -e 's/^.*today_phase\///g' -e 's/\.jpg.*$//g' ${DirShell}/ico
-cat  ${DirShell}/ico >> ${DirShell}/raw
-img_in=$(sed -n 4p ${DirShell}/raw)
-[ -f ${DirShell}/ico ] && rm  ${DirShell}/ico
-
 
 
  # day moon -> more dark
@@ -58,7 +55,9 @@ img_in=$(sed -n 4p ${DirShell}/raw)
   
   img_ico=$(sed -n 2p ${DirShell}/get_moon_icon)
 
-  wget -q --output-document=${DirShell}/moon_tmp.jpg https://moon.nasa.gov/$img_ico > /dev/null 2>&1
+  if [ -n "$img_ico" ]; then
+    wget -q --output-document=${DirShell}/moon_tmp.jpg https://moon.nasa.gov/$img_ico > /dev/null 2>&1
+  fi
 
   [ -f ${DirShell}/get_moon_icon_tmp ] && rm  ${DirShell}/get_moon_icon_tmp
 
