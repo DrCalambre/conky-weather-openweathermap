@@ -75,13 +75,21 @@ case $lang in
 esac
 
 
-# mirror moon image, hemisphere south
+
+# mirror + integración por contraste (sin transparencia)
+
 if [[ $hemisphere == "s" ]]; then
-  /usr/bin/convert -flop -colorspace rgb ${DirShell}/moon_tmp.jpg ${DirShell}/moon.jpg
-  /usr/bin/rm ${DirShell}/moon_tmp.jpg
+  /usr/bin/convert ${DirShell}/moon_tmp.jpg \
+    -flop \
+    -brightness-contrast -8x18 \
+    -gamma 0.92 \
+    ${DirShell}/moon.jpg
 else
-   /usr/bin/convert -colorspace rgb ${DirShell}moon_tmp.jpg ${DirShell}/moon.jpg
-  /usr/bin/rm ${DirShell}/moon_tmp.jpg
+  /usr/bin/convert ${DirShell}/moon_tmp.jpg \
+    -brightness-contrast -8x18 \
+    -gamma 0.92 \
+    ${DirShell}/moon.jpg
 fi
 
+rm -f ${DirShell}/moon_tmp.jpg
 #EOF
