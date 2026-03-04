@@ -37,33 +37,14 @@ if [ -n "$img_in" ]; then
     wget -q -O ${DirShell}/moon_tmp.jpg "https://www.moongiant.com${img_in}" > /dev/null 2>&1
 fi
 
+# Limpiar texto
 sed -i -e '/^ *$/d' -e 's/^ *//g' ${DirShell}/raw
 sed -i '/Illumination/!d' ${DirShell}/raw
 sed -i 's/<br>/\n/g' ${DirShell}/raw
 sed -i 's|<[^>]*>||g' ${DirShell}/raw
 sed -i -e '4d' ${DirShell}/raw
 
-
- # day moon -> more dark
-  wget -q -O ${DirShell}/get_moon_icon_tmp "https://moon.nasa.gov/moon-observation/daily-moon-guide/" > /dev/null 2>&1
-
-  now_ico="$(LANG=en_us_88591 date +'%d %b %Y')"
-  
-  grep -E -o "${now_ico}.{0,428}" ${DirShell}/get_moon_icon_tmp | \
-  sed 's/&quot;/ /g'| sed 's/, /\n/g' | sed -e '2,13d' | sed 's/image_src ://g' | \
-  sed 's/^ *//g' | sed 's/\.jpg.*/.jpg/' > ${DirShell}/get_moon_icon
-  
-  img_ico=$(sed -n 2p ${DirShell}/get_moon_icon)
-
-  if [ -n "$img_ico" ]; then
-    wget -q --output-document=${DirShell}/moon_tmp.jpg https://moon.nasa.gov/$img_ico > /dev/null 2>&1
-  fi
-
-  [ -f ${DirShell}/get_moon_icon_tmp ] && rm  ${DirShell}/get_moon_icon_tmp
-
-
-# exec too
+# Ejecutar procesamiento final
 bash ${DirScripts}/lune_die.sh > /dev/null 2>&1
 
 #EOF
-
