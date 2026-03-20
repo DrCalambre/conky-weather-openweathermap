@@ -399,6 +399,11 @@ Supports both hemispheres and displays seasonal icons dynamically.
 ![conky from my antiX desktop](icons/winter.png)
 
 ---
+## 🎬 Demo (Video)
+
+A cinematic Conky showcase inspired by *2001: A Space Odyssey* aesthetics.
+
+[![Watch the demo](screenshot/conky-astronauta-monolito-uncut.jpg)](https://www.youtube.com/watch?v=__pjWo0Z9R0)
 
 ## 📸 Screenshots
 **UV radiation monitoring (model-based, Open-Meteo)**
