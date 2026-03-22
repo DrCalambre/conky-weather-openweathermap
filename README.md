@@ -416,9 +416,11 @@ A system awakens.
 
 ### Episode 02 — Signal Detected
 
+> Inspired by the atmosphere of Apollo 15
+
 The signal is no longer in orbit…
 now it's here.
-On the surface of the Moon (Apollo 15) 🌕  
+On the surface of the Moon 🌕  
 the monolith reappears… but this time, it is not alone.
 
 My Conky responds.  
