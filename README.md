@@ -399,11 +399,36 @@ Supports both hemispheres and displays seasonal icons dynamically.
 ![conky from my antiX desktop](icons/winter.png)
 
 ---
-## 🎬 Demo (Video)
+## 🎬 Demo (Video Series)
 
 A cinematic Conky showcase inspired by *2001: A Space Odyssey* aesthetics.
+---
+### Episode 01 — Initialization
 
-[![Watch the demo](screenshot/conky-astronauta-monolito-uncut.jpg)](https://www.youtube.com/watch?v=__pjWo0Z9R0)
+> Inspired by the atmosphere of Tasmin Archer
+
+The signal begins.  
+A system awakens.
+
+[![Watch Episode 01](screenshot/Conky-TasminArcher.jpg)](https://www.youtube.com/shorts/zGseQHIpGpU)
+
+---
+
+### Episode 02 — Signal Detected
+
+The signal is no longer in orbit…
+now it's here.
+On the surface of the Moon (Apollo 15) 🌕  
+the monolith reappears… but this time, it is not alone.
+
+My Conky responds.  
+The system observes.  
+The interface evolves.
+
+This is no longer just monitoring…  
+this is communication.
+
+[![Watch Episode 02](screenshot/conky-astronauta-monolito-uncut.jpg)](https://www.youtube.com/watch?v=__pjWo0Z9R0)
 
 ## 📸 Screenshots
 **UV radiation monitoring (model-based, Open-Meteo)**
