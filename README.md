@@ -410,7 +410,9 @@ A cinematic Conky showcase inspired by *2001: A Space Odyssey* aesthetics.
 The signal begins.  
 A system awakens.
 
-[![Watch Episode 01](screenshot/Conky-TasminArcher.jpg)](https://www.youtube.com/shorts/zGseQHIpGpU)
+<a href="https://www.youtube.com/shorts/zGseQHIpGpU">
+  <img src="screenshot/conky-tasmin-archer.jpg" width="575" height="1018">
+</a>
 
 ---
 
@@ -428,7 +430,9 @@ The interface evolves.
 This is no longer just monitoring…  
 this is communication.
 
-[![Watch Episode 02](screenshot/conky-astronauta-monolito-uncut.jpg)](https://www.youtube.com/shorts/QhznCbOqL10)
+<a href="https://www.youtube.com/shorts/QhznCbOqL10">
+  <img src="screenshot/conky-astronauta-monolito-uncut.jpg" width="575" height="1018">
+</a>
 
 ## 📸 Screenshots
 **UV radiation monitoring (model-based, Open-Meteo)**
