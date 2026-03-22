@@ -416,7 +416,7 @@ A system awakens.
 
 ### Episode 02 — Signal Detected
 
-> Inspired by the atmosphere of Apollo 15
+> Inspired by the Apollo 15 mission
 
 The signal is no longer in orbit…
 now it's here.
