@@ -428,7 +428,7 @@ The interface evolves.
 This is no longer just monitoring…  
 this is communication.
 
-[![Watch Episode 02](screenshot/conky-astronauta-monolito-uncut.jpg)](https://www.youtube.com/watch?v=__pjWo0Z9R0)
+[![Watch Episode 02](screenshot/conky-astronauta-monolito-uncut.jpg)](https://www.youtube.com/shorts/QhznCbOqL10)
 
 ## 📸 Screenshots
 **UV radiation monitoring (model-based, Open-Meteo)**
