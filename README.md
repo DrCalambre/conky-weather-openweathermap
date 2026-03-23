@@ -15,7 +15,7 @@ https://drcalambre.blogspot.com/2023/09/conky-implementando-perl-para-las-fases.
 
 ---
 
-☕ Buy me a coffee :)
+☕ Invite me a coffee :)
 
 [![Invitame un café en cafecito.app](https://cdn.cafecito.app/imgs/buttons/button_1.svg)](https://cafecito.app/drcalambre)
 
@@ -403,7 +403,7 @@ Supports both hemispheres and displays seasonal icons dynamically.
 
 A cinematic Conky showcase inspired by *2001: A Space Odyssey* aesthetics.
 ---
-### Episode 01 — Initialization
+### Episode 01 — Initialization (Take 1)
 
 > Inspired by the atmosphere of Tasmin Archer
 
@@ -414,7 +414,7 @@ A system awakens.
 
 ---
 
-### Episode 02 — Signal Detected
+### Episode 02 — Signal Detected (Take 2)
 
 > Inspired by the Apollo 15 mission
 
@@ -431,6 +431,39 @@ This is no longer just monitoring…
 this is communication.
 
 [![Watch Episode 02](screenshot/conky-astronauta-monolito-uncut.jpg)](https://www.youtube.com/shorts/QhznCbOqL10)
+
+---
+
+### Episode 03 — Contact (Take 3)
+
+> Inspired by the primate contact sequence from *2001: A Space Odyssey*  
+> The moment curiosity overrides understanding.
+
+🧬 First contact  
+⚠️ No protocol found  
+🔄 Adapting...
+
+🧠 It did not understand.  
+✋ Yet it reached out anyway.
+
+📡 Input detected  
+❓ Origin: unknown  
+🚀 Response: evolving...
+
+---
+
+A monolith rises.
+
+Seen from below —  
+a surface once inert now reflects something new.
+
+Not a reflection…  
+an imprint.
+
+The system is no longer observing.  
+It has left a mark.
+
+[![Watch Episode 03](screenshot/contact-take-03.jpg)](https://www.youtube.com/shorts/ylEXlhmpXlw)
 
 ## 📸 Screenshots
 **UV radiation monitoring (model-based, Open-Meteo)**
