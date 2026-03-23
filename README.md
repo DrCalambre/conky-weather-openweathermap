@@ -450,8 +450,6 @@ this is communication.
 ❓ Origin: unknown  
 🚀 Response: evolving...
 
----
-
 A monolith rises.
 
 Seen from below —  
@@ -463,7 +461,7 @@ an imprint.
 The system is no longer observing.  
 It has left a mark.
 
-[![Watch Episode 03](screenshot/contact-take-03.jpg)](https://www.youtube.com/shorts/ylEXlhmpXlw)
+[![Watch Episode 03](screenshot/contact-take-03.jpg)](https://www.youtube.com/shorts/QhznCbOqL10)
 
 ## 📸 Screenshots
 **UV radiation monitoring (model-based, Open-Meteo)**
