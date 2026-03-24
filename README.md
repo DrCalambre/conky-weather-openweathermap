@@ -463,6 +463,37 @@ It has left a mark.
 
 [![Watch Episode 03](screenshot/contact-take-03.jpg)](https://www.youtube.com/shorts/QhznCbOqL10)
 
+---
+
+### Episode 04 — Interpretation (Take 4)
+
+> Inspired by the neoclassical room scene from 2001: A Space Odyssey.
+
+After contact, the system begins to interpret the signal.
+But it doesn’t understand it.
+
+Instead, it reconstructs reality the only way it can:
+through familiar structures, known formats… and incorrect meanings.
+
+The data looks right.
+The environment feels real.
+But something is off.
+
+This is not a malfunction.
+This is interpretation.
+
+> parsing signal...
+> environment reconstructed
+> accuracy: unknown
+
+The system is no longer receiving the signal.
+Now it is trying to explain it.
+
+And in doing so…
+it starts to redefine reality.
+
+[![Watch Episode 04](screenshot/Interpretation-take-04.jpg)](https://www.youtube.com/shorts/oeEKzsVM5Rs)
+
 ## 📸 Screenshots
 **UV radiation monitoring (model-based, Open-Meteo)**
 
