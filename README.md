@@ -461,7 +461,7 @@ an imprint.
 The system is no longer observing.  
 It has left a mark.
 
-[![Watch Episode 03](screenshot/contact-take-03.jpg)](https://www.youtube.com/shorts/QhznCbOqL10)
+[![Watch Episode 03](screenshot/contact-take-03.jpg)](https://www.youtube.com/shorts/ylEXlhmpXlw)
 
 ---
 
