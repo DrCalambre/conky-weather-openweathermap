@@ -56,14 +56,10 @@ while (@times){
 	  $list[1] = "in $min_left_full m    \n";
       }
       elsif ($days_left_full > 0) {
-	  $list[1] = ucfirst strftime("%b %d\n", localtime($timeNextPhase));
-	  #print ucfirst strftime("%b %d %R", gmtime($timeNextPhase)), "\n"; #In GMT Time
-      }
-      
-      #print "days left for full is: $days_left_full", "\n";
-      #print "hour left for full is: $hours_left_full hrs", "\n";
-      #print "min left for full is: $min_left_full m", "\n";
-   
+	  my $fecha = ucfirst strftime("%b %d", localtime($timeNextPhase));
+      my $hora  = strftime("%H:%M", localtime($timeNextPhase));
+      $list[1] = "$fecha $hora hs\n";
+     }
   }
     
   if ($phase eq 0 and $countNewMoon eq 0) { # 2 = Full Moon
@@ -84,14 +80,10 @@ while (@times){
 	  $list[3] = "in $min_left_new m    \n";
       }
       elsif ($days_left_new > 0) {
-	  $list[3] = ucfirst strftime("%b %d\n", localtime($timeNextPhase));
-	  #print ucfirst strftime("%b %d %R", gmtime($timeNextPhase)), "\n"; #In GMT Time
+      my $fecha = ucfirst strftime("%b %d", localtime($timeNextPhase));
+      my $hora  = strftime("%H:%M", localtime($timeNextPhase));
+      $list[3] = "$fecha $hora hs\n";
       }
-      
-      #print "days left for new is: $days_left_new", "\n";
-      #print "hour left for new is: $hours_left_new hrs", "\n";
-      #print "min left for new is: $min_left_new m", "\n";
- 
   }
 
 $phase = ($phase + 1) % 4;
