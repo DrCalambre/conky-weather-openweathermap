@@ -14,6 +14,7 @@ https://drcalambre.blogspot.com/2023/09/conky-implementando-perl-para-las-fases.
 (A language translator is available on the blog.)
 
 ---
+If this project makes your desktop more enjoyable or helps you plan your day under the Sun and the Moon, consider buying me a coffee. Your gesture keeps me motivated to continue improving it.
 
 ☕ Invite me a coffee :)
 
