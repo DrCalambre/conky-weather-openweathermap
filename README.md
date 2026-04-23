@@ -329,6 +329,8 @@ UV data provided by **Open-Meteo**
 
 Introduces a modern, Cairo-rendered progress bar for moon illumination, complementing the existing text-based moon phase information.
 
+![Lunar phase bar – Conky v1.4.0](screenshot/lunar-bar-cairo.png)
+
 #### Visual features
 
 - **Dynamic color coding**: The bar changes color according to the moon phase:
@@ -372,7 +374,6 @@ Introduces a modern, Cairo-rendered progress bar for moon illumination, compleme
 
 The Cairo bar **complements** (does not replace) the existing text lines showing "Nueva:" and "Llena:" dates. Both visual elements work together to provide a richer moon phase experience.
 
-![Lunar phase bar – Conky v1.4.0](screenshot/lunar-bar-cairo.png)
 
 ---
 
