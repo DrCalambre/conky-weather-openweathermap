@@ -25,8 +25,12 @@ uv=$(jq -r '.current.uv_index' "$CACHE")
 # In case null comes
 [ "$uv" = "null" ] && echo "UV sin datos" && exit 0
 
-# Simple rounding for classification
-uv_int=$(printf "%.0f" "$uv")
+# Simple rounding for classification - locale vs formato decimal
+uv_clean=$(echo "$uv" | tr ',' '.')
+uv_int=$(LC_NUMERIC=C printf "%.0f" "$uv_clean" 2>/dev/null)
+
+# fallback por si algo falla
+[ -z "$uv_int" ] && uv_int=0
 
 if   [ "$uv_int" -le 2 ]; then
     echo "bajo · protección mínima"
