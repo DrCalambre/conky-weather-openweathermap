@@ -372,7 +372,7 @@ Introduces a modern, Cairo-rendered progress bar for moon illumination, compleme
 
 The Cairo bar **complements** (does not replace) the existing text lines showing "Nueva:" and "Llena:" dates. Both visual elements work together to provide a richer moon phase experience.
 
-![Lunar phase bar – Conky v1.4.0](screenshot/lunar-bar-cairo.png) *← Add your screenshot here*
+![Lunar phase bar – Conky v1.4.0](screenshot/lunar-bar-cairo.png)
 
 ---
 
