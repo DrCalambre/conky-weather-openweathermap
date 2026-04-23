@@ -1,4 +1,3 @@
-```markdown
 # OpenWeatherMap-wather-conky-master
 
 A Conky configuration using the **OpenWeatherMap API**, featuring:
@@ -559,4 +558,4 @@ it starts to redefine reality.
 The desktop wallpaper is a photograph taken during a bicycle ride along the Río Gallegos coastline (Argentina).
 
 ![conky from my antiX desktop](screenshot/screenshot_antix_rox-icewm_desktop.jpg)
-```
+
