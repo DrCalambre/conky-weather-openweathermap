@@ -1,3 +1,4 @@
+```markdown
 # OpenWeatherMap-wather-conky-master
 
 A Conky configuration using the **OpenWeatherMap API**, featuring:
@@ -45,7 +46,7 @@ Picom provides real compositing and proper ARGB support.
 ### ✅ Required Packages
 Make sure the following packages are installed:
 ```bash
-sudo apt install conky picom jq curl fonts-materialdesignicons-webfont
+sudo apt install conky picom jq curl fonts-materialdesignicons-webfont fonts-noto-color-emoji
 ```
 
 Optional (only if you use disk temperature monitoring):
@@ -322,6 +323,59 @@ UV data provided by **Open-Meteo**
 
 ---
 
+### **Update — 22/04/26 — v1.4.0**
+
+**Lunar phase bar with Cairo graphics**
+
+Introduces a modern, Cairo-rendered progress bar for moon illumination, complementing the existing text-based moon phase information.
+
+#### Visual features
+
+- **Dynamic color coding**: The bar changes color according to the moon phase:
+  - Golden glow for full moon
+  - Blue-gray for new moon
+  - Warm yellow for waxing phases
+  - Pale blue for waning phases
+
+- **Subtle animations**: Gentle pulsing effect synchronized with system clock
+
+- **Polished design**:
+  - Rounded corners with outer shadow for depth
+  - Gradient fill on the progress bar
+  - Internal shine effect on the upper edge
+  - White semi-transparent border
+
+- **Precise indicators**:
+  - Percentage text centered inside the bar
+  - Vertical marker with small triangles at the exact illumination point
+  - Moon phase emoji (🌑🌒🌓🌔🌕🌖🌗🌘) rendered with Noto Color Emoji font
+
+- **Hemisphere awareness**: Emoji orientation automatically adjusts for Southern Hemisphere (configurable in the Lua script)
+
+#### Technical improvements
+
+- **New file**: `~/.config/conky/scripts/moon_bar.lua` (Cairo rendering engine)
+- **New dependency**: `fonts-noto-color-emoji` (optional but recommended for full emoji support)
+- **Updated `conky.conf`**:
+  ```lua
+  lua_load = "~/.config/conky/scripts/moon_bar.lua",
+  lua_draw_hook_post = "draw_moon_bar",
+  default_bar_width = 60,
+  default_bar_height = 30,
+  ```
+- **Typography refinements**: LCDMono and LCD2 fonts for improved readability
+- **Spacing adjustments**: Fine-tuned vertical positions throughout the layout
+- **Perl script enhancement**: `moon.pl` now displays the exact hour (HH:MM) for upcoming Full Moon and New Moon events (e.g., "Abr 23 18:30 hs" instead of just "Abr 23")
+- **UV script robustness**: `uv_label.sh` now handles decimal separators correctly (supports both comma and point) and includes a fallback for malformed data
+
+#### Integration note
+
+The Cairo bar **complements** (does not replace) the existing text lines showing "Nueva:" and "Llena:" dates. Both visual elements work together to provide a richer moon phase experience.
+
+![Lunar phase bar – Conky v1.4.0](screenshot/lunar-bar-cairo.png) *← Add your screenshot here*
+
+---
+
 ### **Update — 08/01/26**
 
 **UV Index monitoring (Open-Meteo integration)**
@@ -505,4 +559,4 @@ it starts to redefine reality.
 The desktop wallpaper is a photograph taken during a bicycle ride along the Río Gallegos coastline (Argentina).
 
 ![conky from my antiX desktop](screenshot/screenshot_antix_rox-icewm_desktop.jpg)
-
+```
