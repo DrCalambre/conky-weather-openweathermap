@@ -47,9 +47,9 @@ case $lang in
 		sed -i -e 's/New Moon/Luna Nueva/g' ${DirShell}/moon_phase_die
           sed -i -e 's/Full Moon/Luna Llena/g' ${DirShell}/moon_phase_die
           sed -i -e 's/Waxing Crescent/Luna Creciente/g' ${DirShell}/moon_phase_die
-          sed -i -e 's/Waxing Gibbous/Luna Menguante/g' ${DirShell}/moon_phase_die
+          sed -i -e 's/Waxing Gibbous/Gibosa Creciente/g' ${DirShell}/moon_phase_die
           sed -i -e 's/Waning Crescent/Creciente Menguante/g' ${DirShell}/moon_phase_die
-          sed -i -e 's/Waning Gibbous/Luna Menguante/g' ${DirShell}/moon_phase_die
+          sed -i -e 's/Waning Gibbous/Gibosa Menguante/g' ${DirShell}/moon_phase_die
           sed -i -e 's/First Quarter/Cuarto Creciente/g' ${DirShell}/moon_phase_die
           sed -i -e 's/Last Quarter/Cuarto Menguante/g' ${DirShell}/moon_phase_die
      #months
@@ -65,9 +65,9 @@ case $lang in
           sed -i -e 's/New Moon/Luna Nueva/g' ${DirShell}/raw
           sed -i -e 's/Full Moon/Luna Llena/g' ${DirShell}/raw
           sed -i -e 's/Waxing Crescent/Luna Creciente/g' ${DirShell}/raw
-          sed -i -e 's/Waxing Gibbous/Luna Menguante/g' ${DirShell}/raw
+          sed -i -e 's/Waxing Gibbous/Gibosa Creciente/g' ${DirShell}/raw
           sed -i -e 's/Waning Crescent/Creciente Menguante/g' ${DirShell}/raw
-          sed -i -e 's/Waning Gibbous/Luna Menguante/g' ${DirShell}/raw
+          sed -i -e 's/Waning Gibbous/Gibosa Menguante/g' ${DirShell}/raw
           sed -i -e 's/First Quarter/Cuarto Creciente/g' ${DirShell}/raw
           sed -i -e 's/Last Quarter/Cuarto Menguante/g' ${DirShell}/raw
           ;;
