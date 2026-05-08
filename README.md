@@ -323,6 +323,52 @@ UV data provided by **Open-Meteo**
 
 ---
 
+### **Update — 08/05/26 — v1.5.0**
+
+**Vertical thermometer with Cairo graphics**
+
+A new realistic glass thermometer has been added, complementing the lunar bar. It displays the current temperature with a fluid‑filled bulb that changes colour dynamically, making the desktop feel even more alive.
+
+![Conky with vertical thermometer](screenshot/thermometer.png)
+
+#### Visual features
+
+- **Dynamic colour range** according to temperature:
+  - ❄️ **Blue** (<10°C) – cold, ice, frost
+  - 🌿 **Green** (10–20°C) – mild, fresh, comfortable
+  - 🍊 **Orange** (20–30°C) – warm, summer, pleasant heat
+  - 🔥 **Red** (>30°C) – extreme heat, alert, danger
+
+- **Polished glass design**:
+  - Vertical tube with rounded corners
+  - Drop‑shaped bulb at the bottom
+  - Outer shadow for depth (simulated blur)
+  - Gradient glass material (radial for bulb, linear for tube)
+  - Fluid with vertical gradient and lateral highlight for volume
+  - Meniscus curve (subtle detail showing liquid surface tension)
+  - White reflections on glass (vertical line on tube, bright spot on bulb)
+
+- **Side scale**: marks every 10°C with numeric labels, drawn directly in Cairo.
+
+- **Temperature text**: large, bold, centred below the bulb.
+
+#### Technical improvements
+
+- **New script**: `scripts/get_temp.sh` – extracts current temperature from `openweathermap.json` and caches it in `~/.cache/current_temp`. Called every 360 seconds.
+- **Updated `conky.conf`**:
+  - Added `${execi 360 ~/.config/conky/scripts/get_temp.sh}` to keep temperature cache fresh.
+  - Changed `lua_draw_hook_post` from `"draw_moon_bar"` to `"draw"` to use the unified drawing function.
+- **Enhanced `scripts/moon_bar.lua`**:
+  - Now contains both `draw_moon_bar()` and `draw_thermometer_vertical()`.
+  - New main function `conky_draw()` that calls both and manages the Cairo surface.
+  - Clean separation of concerns, easy to extend with more visual elements in the future (UV gauge, humidity, pressure, etc.).
+
+#### Integration note
+
+The thermometer works side‑by‑side with the lunar bar. Both are drawn in the same Lua script, reducing overhead and keeping the configuration tidy. The new `get_temp.sh` script avoids calling `jq` multiple times per second, improving performance.
+
+---
+
 ### **Update — 22/04/26 — v1.4.0**
 
 **Lunar phase bar with Cairo graphics**
@@ -373,7 +419,6 @@ Introduces a modern, Cairo-rendered progress bar for moon illumination, compleme
 #### Integration note
 
 The Cairo bar **complements** (does not replace) the existing text lines showing "Nueva:" and "Llena:" dates. Both visual elements work together to provide a richer moon phase experience.
-
 
 ---
 
@@ -549,6 +594,20 @@ it starts to redefine reality.
 
 [![Watch Episode 04](screenshot/Interpretation-take-04.jpg)](https://www.youtube.com/shorts/oeEKzsVM5Rs)
 
+---
+
+### Episode 05 — The Bulb (Take 5)
+
+> Inspired by the red eye of HAL 9000.
+>
+> The monolith no longer just observes. Now it measures the Earth's warmth.
+> After Initialization, Signal, Contact, and Interpretation… mercury rises inside the glass.
+> But zoom in. Look closer.
+>
+> *"Just what do you think you're doing, Dave?"*
+
+[![Watch Episode 05](screenshot/HAL9000.png)](https://www.youtube.com/shorts/LXsEdRWeBVY)
+
 ## 📸 Screenshots
 **UV radiation monitoring (model-based, Open-Meteo)**
 
@@ -560,4 +619,3 @@ it starts to redefine reality.
 The desktop wallpaper is a photograph taken during a bicycle ride along the Río Gallegos coastline (Argentina).
 
 ![conky from my antiX desktop](screenshot/screenshot_antix_rox-icewm_desktop.jpg)
-
