@@ -613,9 +613,14 @@ it starts to redefine reality.
 
 ![UV radiation monitoring – Conky](screenshot/conky-UV-radiation-monitoring.gif)
 
-![conky from my antiX desktop](screenshot/screenshot_conk_current_and_next_station.jpg)
 ![conky from my antiX desktop](screenshot/screenshot_conky.jpg)
+
+![conky from my antiX desktop](screenshot/screenshot_conk_current_and_next_station.jpg)
 
 The desktop wallpaper is a photograph taken during a bicycle ride along the Río Gallegos coastline (Argentina).
 
 ![conky from my antiX desktop](screenshot/screenshot_antix_rox-icewm_desktop.jpg)
+
+The desktop wallpaper conky V1.10.8 antiX rox-iceWM (2022)
+
+![conky from my antiX desktop](screenshot/conky_V1.10.8_antiX_rox-iceWM_digitalClock-openWeatherMap-compass-moon_Argentina_Patagonia.jpg)
